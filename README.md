@@ -42,7 +42,7 @@ provider "aws" {
 }
 
 module "demo-onprem-1" {
-  source                                = "github.com/aviatrix-automation/aviatrix-catalyst-aws?ref=main"
+  source                                = "github.com/pbomma-avx/aviatrix-catalyst-aws?ref=main"
   hostname                              = "avxOnprem-East2"
   tunnel_proto				= "IPsec"
   instance_type                         = "t3.medium"
@@ -58,7 +58,7 @@ module "demo-onprem-1" {
 }
 
 module "demo-onprem-1" {
-  source                                = "github.com/aviatrix-automation/aviatrix-catalyst-aws?ref=main"
+  source                                = "github.com/pbomma-avx/aviatrix-catalyst-aws?ref=main"
   providers                             = { aws = aws.use1 }
   hostname                              = "avxOnprem-East1"
   tunnel_proto				= "IPsec"
@@ -78,7 +78,7 @@ module "demo-onprem-1" {
 # public conns are defined to connect to another aviatrix transit
 # acting as the on-prem sd-wan
 module "demo-onprem-2" {
-  source                                = "github.com/aviatrix-automation/aviatrix-catalyst-aws?ref=main"
+  source                                = "github.com/pbomma-avx/aviatrix-catalyst-aws?ref=main"
   providers                             = { aws = aws.usw2 }
   hostname                              = "avxOnprem-West2"
   tunnel_proto				= "LAN"
